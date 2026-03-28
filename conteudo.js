@@ -2,30 +2,24 @@
   const btnSim = document.getElementById('sim');
   const btnNao = document.getElementById('nao');
   const mensagemSim = document.getElementById('mensagemSim');
+  const musica = document.getElementById('musica');
 
   btnSim.addEventListener('click', () => {
     mensagemSim.style.display = 'block';
     chuvaDeCoracoes();
+    musica.play();
   });
 
-  const musica = document.getElementById('musica');
-
-  btnSim.addEventListener('click', () => {
-  mensagemSim.style.display = 'block';
-  chuvaDeCoracoes();
-  musica.play();
-});
-
+  btnNao.addEventListener('mouseover', fugir);
   btnNao.addEventListener('touchstart', fugir);
-btnNao.addEventListener('mouseover', fugir);
 
-function fugir() {
-  const x = Math.random() * (window.innerWidth - btnNao.offsetWidth - 40);
-  const y = Math.random() * (window.innerHeight - btnNao.offsetHeight - 40);
-  btnNao.style.position = 'absolute';
-  btnNao.style.left = `${x}px`;
-  btnNao.style.top = `${y}px`;
-}
+  function fugir() {
+    const x = Math.random() * (window.innerWidth - btnNao.offsetWidth - 40);
+    const y = Math.random() * (window.innerHeight - btnNao.offsetHeight - 40);
+    btnNao.style.position = 'absolute';
+    btnNao.style.left = `${x}px`;
+    btnNao.style.top = `${y}px`;
+  }
 });
 
 function chuvaDeCoracoes() {
@@ -44,12 +38,3 @@ function chuvaDeCoracoes() {
     }, 5000);
   }
 }
-
-  btnNao.addEventListener('mouseover', () => {
-    const x = Math.random() * (window.innerWidth - btnNao.offsetWidth - 40);
-    const y = Math.random() * (window.innerHeight - btnNao.offsetHeight - 40);
-    btnNao.style.position = 'absolute';
-    btnNao.style.left = `${x}px`;
-    btnNao.style.top = `${y}px`;
-  });
-});
