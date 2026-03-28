@@ -8,6 +8,14 @@
     chuvaDeCoracoes();
   });
 
+  const musica = document.getElementById('musica');
+
+  btnSim.addEventListener('click', () => {
+  mensagemSim.style.display = 'block';
+  chuvaDeCoracoes();
+  musica.play();
+});
+
   btnNao.addEventListener('touchstart', fugir);
 btnNao.addEventListener('mouseover', fugir);
 
