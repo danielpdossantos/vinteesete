@@ -8,13 +8,16 @@
     chuvaDeCoracoes();
   });
 
-  btnNao.addEventListener('mouseover', () => {
-    const x = Math.random() * (window.innerWidth - btnNao.offsetWidth - 40);
-    const y = Math.random() * (window.innerHeight - btnNao.offsetHeight - 40);
-    btnNao.style.position = 'absolute';
-    btnNao.style.left = `${x}px`;
-    btnNao.style.top = `${y}px`;
-  });
+  btnNao.addEventListener('touchstart', fugir);
+btnNao.addEventListener('mouseover', fugir);
+
+function fugir() {
+  const x = Math.random() * (window.innerWidth - btnNao.offsetWidth - 40);
+  const y = Math.random() * (window.innerHeight - btnNao.offsetHeight - 40);
+  btnNao.style.position = 'absolute';
+  btnNao.style.left = `${x}px`;
+  btnNao.style.top = `${y}px`;
+}
 });
 
 function chuvaDeCoracoes() {
